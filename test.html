@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 引入 Font Awesome 样式文件 -->
+    <!--  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">-->
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .button-container {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 10px;
+        }
+
+        .icon-button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+    <title>Icon Click Event Example</title>
+</head>
+<body>
+
+<div class="button-container">
+    <i class="glyphicon glyphicon-music icon-button" id="playIcon"></i>
+</div>
+
+<audio id="myAudio" controls autoplay>
+    <source src="media/奢香夫人.mp3" type="audio/mp3">
+    Your browser does not support the audio tag.
+</audio>
+
+<script>
+    var audio = document.getElementById("myAudio");
+    var playIcon = document.getElementById("playIcon");
+
+    playIcon.addEventListener("click", function () {
+        if (audio.paused) {
+            audio.play();
+            // 添加点击播放时的逻辑
+            console.log("音频开始播放");
+        } else {
+            audio.pause();
+            // 添加点击暂停时的逻辑
+            console.log("音频已暂停");
+        }
+    });
+</script>
+
+</body>
+</html>
+
